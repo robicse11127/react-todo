@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import {TodoContext} from './TodoContext';
-
+import deletelogo from './../../img/delete.png';
 const Todo = (props) => {
     const [ todos, setTodos ] = useContext( TodoContext );
 
@@ -19,15 +19,23 @@ const Todo = (props) => {
         }))
     }
 
+    
+
     return (
-        <div>
+        <div className="todo-item">
             <label>
                 <input type="checkbox" name="check_todo" onChange={todoComplete} />
-                {props.title}
+                <span className="item-title">{props.title}</span>
             </label>
-            <span className="delete-todo" onClick={todoDelete}>Delete</span>
+            <span className="delete-todo" onClick={todoDelete}>
+                <img src={deletelogo} alt="Delete" />
+            </span>
         </div>
     )
+}
+
+const titleStyle = {
+    textDecoration: 'line-through'
 }
 
 export default Todo;

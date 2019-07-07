@@ -12,8 +12,10 @@ function App() {
 	return (
 		<TodoProvider>
 			<div className="App">
-				<TodoList />
-				<AddTodo />
+				<div className="container">
+					<TodoList />
+					<AddTodo />
+				</div>
 			</div>
 		</TodoProvider>
 	);

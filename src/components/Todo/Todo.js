@@ -19,13 +19,19 @@ const Todo = (props) => {
         }))
     }
 
-    
+    const itemStyle = (completed) => {
+        if(props.completed === true) {
+            return {
+                textDecoration: 'line-through'
+            }
+        }
+    }
 
     return (
         <div className="todo-item">
             <label>
                 <input type="checkbox" name="check_todo" onChange={todoComplete} />
-                <span className="item-title">{props.title}</span>
+                <span className="item-title" style={itemStyle(props.completed)}>{props.title}</span>
             </label>
             <span className="delete-todo" onClick={todoDelete}>
                 <img src={deletelogo} alt="Delete" />

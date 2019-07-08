@@ -12,7 +12,7 @@ const TodoList = () => {
             </header>
             <div className="content">
                 {todos.map( (todo, index) => (
-                    <Todo key={index} title={todo.title} id={todo.id} />
+                    <Todo key={index} title={todo.title} id={todo.id} completed={todo.completed} />
                 ))}
             </div>
         </div>
